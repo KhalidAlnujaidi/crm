@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from models import init_db, add_contact, get_all_contacts
+from models import init_db, add_contact, get_all_contacts, update_contact
 
 app = Flask(__name__)
 CORS(app)
@@ -29,6 +29,20 @@ def create_contact():
         return {'error': 'Missing required fields'}, 400
     add_contact(team_member, company_name, contact_details)
     return {'status': 'contact added'}
+
+@app.route('/contacts/<int:contact_id>', methods=['PUT'])
+def edit_contact(contact_id):
+    data = request.get_json()
+    team_member = data.get('team_member')
+    company_name = data.get('company_name')
+    contact_details = data.get('contact_details', '')
+    if not team_member or not company_name:
+        return {'error': 'Missing required fields'}, 400
+    try:
+        update_contact(contact_id, team_member, company_name, contact_details)
+        return {'status': 'contact updated'}
+    except Exception as e:
+        return {'error': str(e)}, 500
 
 if __name__ == '__main__':
     import os

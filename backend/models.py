@@ -48,3 +48,14 @@ def get_all_contacts():
         }
         for row in rows
     ]
+
+def update_contact(contact_id, team_member, company_name, contact_details):
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute('''
+        UPDATE contacts
+        SET team_member = ?, company_name = ?, contact_details = ?, timestamp = ?
+        WHERE id = ?
+    ''', (team_member, company_name, contact_details, datetime.now(), contact_id))
+    conn.commit()
+    conn.close()

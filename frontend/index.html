@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma CRM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Enigma CRM</h1>
+        <div class="toolbar">
+            <input type="text" id="searchBar" placeholder="Search contacts...">
+            <button id="addContactBtn">Add New Contact</button>
+        </div>
+        <div id="contactsList" class="contacts-list"></div>
+    </div>
+
+    <!-- Add Contact Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Add New Contact</h2>
+            <form id="addContactForm">
+                <label for="teamMember">Your Name*</label>
+                <input type="text" id="teamMember" name="teamMember" required>
+                <label for="companyName">Company Name*</label>
+                <input type="text" id="companyName" name="companyName" required>
+                <label for="contactDetails">Contact Details</label>
+                <textarea id="contactDetails" name="contactDetails"></textarea>
+                <button type="submit">Add Contact</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

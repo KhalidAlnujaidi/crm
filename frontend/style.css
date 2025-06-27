@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 24px 32px 32px 32px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+.toolbar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+#searchBar {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#addContactBtn {
+    padding: 8px 16px;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#addContactBtn:hover {
+    background: #125ea2;
+}
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.contact-card {
+    background: #f9fbfd;
+    border: 1px solid #e3e7ed;
+    border-radius: 6px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+.contact-card:hover {
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.card-header {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.card-meta {
+    color: #1976d2;
+    font-size: 0.95em;
+    margin-bottom: 6px;
+}
+.card-details {
+    margin-top: 10px;
+    color: #333;
+    background: #eef3fa;
+    border-radius: 4px;
+    padding: 10px;
+    display: none;
+}
+.card-details.open {
+    display: block;
+}
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal.hidden {
+    display: none;
+}
+.modal-content {
+    background: #fff;
+    padding: 28px 32px 24px 32px;
+    border-radius: 8px;
+    min-width: 320px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+    position: relative;
+}
+.close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 1.5em;
+    color: #888;
+    cursor: pointer;
+}
+form label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+form input, form textarea {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+form button[type="submit"] {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+form button[type="submit"]:hover {
+    background: #125ea2;
+}

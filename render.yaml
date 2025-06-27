@@ -4,7 +4,6 @@ services:
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python backend/app.py
-    plan: free
     envVars:
       - key: PORT
         value: 10000
@@ -12,5 +11,4 @@ services:
   - type: web
     name: enigma-crm-frontend
     env: static
-    staticPublishPath: frontend
-    plan: free 
+    staticPublishPath: frontend 

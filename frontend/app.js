@@ -1,4 +1,4 @@
-const API_BASE = 'http://127.0.0.1:5000';
+const API_BASE = 'https://enigma-crm-backend.onrender.com';
 
 const contactsList = document.getElementById('contactsList');
 const searchBar = document.getElementById('searchBar');

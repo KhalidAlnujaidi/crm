@@ -9,7 +9,7 @@ services:
       - key: PORT
         value: 10000
 
-  - type: static
+  - type: web
     name: enigma-crm-frontend
     env: static
     staticPublishPath: frontend
